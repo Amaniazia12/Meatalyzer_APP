@@ -26,7 +26,7 @@ class _HomeState extends State<Slider_screen> {
       }
   Widget pageIndexIndicator(bool isCurrentPage) {
     return Container(
-
+      //color: Colors.orange,
       margin: EdgeInsets.symmetric(horizontal: 7.0),
       height: isCurrentPage ? 10.0 :6.0,
       width: isCurrentPage ? 10.0 :6.0 ,
@@ -56,9 +56,8 @@ class _HomeState extends State<Slider_screen> {
             }
             ),
        bottomSheet:CurrentIndex!= slides.length-1 ?
-
         Container(
-          //alignment: Alignment.bottomCenter,
+          color: Theme.of(context).primaryColor,
           padding: EdgeInsets.only(bottom: 50),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -71,23 +70,24 @@ class _HomeState extends State<Slider_screen> {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                   //SizedBox(width: 20,),
                    Container(
                        child: GestureDetector(  
                           onTap:()=>_nextScreen (context),
                           child:Container(
                               padding: EdgeInsets.all(20),
                               decoration: BoxDecoration(
+                                //color: Colors.white,
                                 borderRadius: BorderRadius.only(
                                 bottomLeft: Radius.circular(100.0),
                                 topLeft: Radius.circular(100.0),
                                 bottomRight: Radius.circular(100.0),
-                                topRight: Radius.circular(100.0)), \),
-                                child: Text("Skip"),
-                   )),
-             ),
-                ],
-              )
+                                topRight: Radius.circular(100.0)),),
+                                child: Text("Skip >" , style: TextStyle(color:Theme.of(context).accentColor),),
+                           )
+                      ),
+                    ),
+                  ],
+                )
              ],
           ),
         ):

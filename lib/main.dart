@@ -14,6 +14,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "App Onborading",
+      theme: ThemeData(
+        primaryColor: Colors.black,
+        accentColor: Colors.white,
+       ),
       home: AnimatedSplashScreen(
           splash:Image.asset('assets/images/img8.png',height: 200,width: 300,),
           backgroundColor:  Colors.red[900],
@@ -23,7 +27,6 @@ class MyApp extends StatelessWidget {
       routes: {
         Information_screen.routName:(ctx)=>Information_screen(),
         Camera_screen.routName:(ctx)=>Camera_screen(),
-
       }
     );
 }
