@@ -7,7 +7,7 @@ class SliderTitle extends StatelessWidget {
    return 
     Container(
       height: MediaQuery.of(context).size.height*0.6,
-      color: Theme.of(context).primaryColor,
+      color: Colors.white,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children:<Widget> [
@@ -31,13 +31,13 @@ class SliderTitle extends StatelessWidget {
           Text(title , style: TextStyle(
             fontSize: 18 , 
             fontWeight: FontWeight.bold,
-            color: Theme.of(context).accentColor
+            color: Colors.black87
           ),),
           SizedBox(height:12,),
           Text(desc,style: TextStyle(
             fontSize: 22, 
             fontWeight: FontWeight.bold,
-            color: Theme.of(context).accentColor)),
+            color: Colors.black87)),
         ],
       ),
     )

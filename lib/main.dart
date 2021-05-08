@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "App Onborading",
       theme: ThemeData(
-        primaryColor: Colors.black,
+        //primaryColor: Colors.black87,
         accentColor: Colors.white,
        ),
       home: AnimatedSplashScreen(

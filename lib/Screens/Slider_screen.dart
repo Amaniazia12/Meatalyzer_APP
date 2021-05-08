@@ -1,4 +1,5 @@
 
+import 'package:Meatalyzer_app/Screens/Camera_Screen.dart';
 import 'package:Meatalyzer_app/Screens/Information_screen.dart';
 
 import 'package:flutter/material.dart';
@@ -21,7 +22,7 @@ class _HomeState extends State<Slider_screen> {
 
   void _nextScreen (BuildContext cont){
     Navigator.of(cont).pushNamed(
-      Information_screen.routName,
+      Camera_screen.routName,
       );
       }
   Widget pageIndexIndicator(bool isCurrentPage) {
@@ -57,7 +58,7 @@ class _HomeState extends State<Slider_screen> {
             ),
        bottomSheet:CurrentIndex!= slides.length-1 ?
         Container(
-          color: Theme.of(context).primaryColor,
+          color:Colors.white,
           padding: EdgeInsets.only(bottom: 50),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -74,7 +75,7 @@ class _HomeState extends State<Slider_screen> {
                        child: GestureDetector(  
                           onTap:()=>_nextScreen (context),
                           child:Container(
-                              padding: EdgeInsets.all(20),
+                              padding: EdgeInsets.all(17),
                               decoration: BoxDecoration(
                                 //color: Colors.white,
                                 borderRadius: BorderRadius.only(
@@ -82,7 +83,7 @@ class _HomeState extends State<Slider_screen> {
                                 topLeft: Radius.circular(100.0),
                                 bottomRight: Radius.circular(100.0),
                                 topRight: Radius.circular(100.0)),),
-                                child: Text("Skip >" , style: TextStyle(color:Theme.of(context).accentColor),),
+                                child: Text("Skip >" , style: TextStyle(color:Colors.black87),),
                            )
                       ),
                     ),

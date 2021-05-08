@@ -48,7 +48,7 @@ List<SliderModel> getSliders(){
    slides.add(sliderModel);
    //4
    sliderModel = new SliderModel();
-   sliderModel.setImageAssertPath("assets/images/img10.png");
+   sliderModel.setImageAssertPath("assets/images/img16.png");
    sliderModel.setTitle("Lets get start");
    sliderModel.setDoc("Lets get start");
    slides.add(sliderModel);

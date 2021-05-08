@@ -4,6 +4,7 @@ import 'dart:async';
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
+import './Information_screen.dart';
 //import 'package:image_picker/image_picker.dart';
 
 AppBar header ( {String  name , removeBackButton = false })
@@ -29,7 +30,11 @@ Container circuleprogress()
   );
 
 }
-
+ void _nextScreen (BuildContext cont){
+    Navigator.of(cont).pushNamed(
+      Information_screen.routName,
+      );
+      }
 class Camera_screen extends StatefulWidget{
   @override
   _upload_imageState createState() => _upload_imageState();
@@ -60,6 +65,15 @@ class _upload_imageState extends State<Camera_screen> {
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
                     color: Colors.red[900],
                     child: Text("Upload chooseImageimage",style: TextStyle(color: Colors.white,fontSize: 20.0),),
+                  ),
+                ),
+                Container(
+                  height: 55,
+                  child: RaisedButton(
+                    onPressed: (){ (context);},
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
+                    color: Colors.red[900],
+                    child: Text("info",style: TextStyle(color: Colors.white,fontSize: 20.0),),
                   ),
                 )
               ]
