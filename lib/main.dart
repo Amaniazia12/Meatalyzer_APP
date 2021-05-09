@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       home: AnimatedSplashScreen(
           splash:Image.asset('assets/images/img8.png',height: 200,width: 300,),
           backgroundColor:  Colors.red[900],
-          nextScreen: Slider_screen(),
+          nextScreen: Camera_screen(),
         ),
       debugShowCheckedModeBanner:false,
       routes: {

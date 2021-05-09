@@ -1,11 +1,11 @@
 
+import 'package:Meatalyzer_app/Screens/Information_screen.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/widgets.dart';
-import './Information_screen.dart';
-//import 'package:image_picker/image_picker.dart';
+import 'package:image_picker/image_picker.dart';
 
 AppBar header ( {String  name , removeBackButton = false })
 {
@@ -30,11 +30,7 @@ Container circuleprogress()
   );
 
 }
- void _nextScreen (BuildContext cont){
-    Navigator.of(cont).pushNamed(
-      Information_screen.routName,
-      );
-      }
+
 class Camera_screen extends StatefulWidget{
   @override
   _upload_imageState createState() => _upload_imageState();
@@ -48,6 +44,11 @@ class _upload_imageState extends State<Camera_screen> {
   Widget build(BuildContext context) {
     return file_image == null ?Upload_image1() : confirm_image() ;
   }
+  void _nextScreen (BuildContext cont){
+    Navigator.of(cont).pushNamed(
+      Information_screen.routName,
+      );
+      }
 
   Container Upload_image1(){
      return Container (
@@ -56,21 +57,21 @@ class _upload_imageState extends State<Camera_screen> {
         body: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-               Image(image: AssetImage('image/OIP.jpg'),),
+               Image(image: AssetImage('assets/images/img19.png'),),
                 Padding (padding: EdgeInsets.only(top: 70.0)),
                 Container(
                   height: 55,
                   child: RaisedButton(
-                    onPressed: (){ (context);},
+                    onPressed: (){ chooseImage (context);},
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
                     color: Colors.red[900],
-                    child: Text("Upload chooseImageimage",style: TextStyle(color: Colors.white,fontSize: 20.0),),
+                    child: Text("Upload image",style: TextStyle(color: Colors.white,fontSize: 20.0),),
                   ),
                 ),
-                Container(
+                 Container(
                   height: 55,
                   child: RaisedButton(
-                    onPressed: (){ (context);},
+                    onPressed: ()=>_nextScreen (context),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
                     color: Colors.red[900],
                     child: Text("info",style: TextStyle(color: Colors.white,fontSize: 20.0),),
@@ -87,14 +88,14 @@ class _upload_imageState extends State<Camera_screen> {
         builder: (context){
           return SimpleDialog(
             children: <Widget>[
-              //SimpleDialogOption( child: Text ("Photo With Camera"), onPressed: (){ camerafun();},),
-              //SimpleDialogOption( child: Text ("Photo From Gallery"), onPressed: (){ galleryfun();},),
+              SimpleDialogOption( child: Text ("Photo With Camera"), onPressed: (){ camerafun();},),
+              SimpleDialogOption( child: Text ("Photo From Gallery"), onPressed: (){ galleryfun();},),
               SimpleDialogOption( child: Text ("Cancel"),onPressed: (){Navigator.pop(context);},)
             ],
           );
         });
   }
-  /*final ImagePicker _picker = ImagePicker();
+  final ImagePicker _picker = ImagePicker();
   Future camerafun()async{
     Navigator.pop(context);
     final pickedFile = await _picker.getImage(source: ImageSource.camera, maxHeight: 675, maxWidth: 960);
@@ -110,7 +111,7 @@ class _upload_imageState extends State<Camera_screen> {
       this.file_image = pickedFile as File;
     });
   }
-  */
+  
   Container confirm_image() {
     return Container(
       child: Scaffold(

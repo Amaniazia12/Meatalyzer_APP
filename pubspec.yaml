@@ -24,7 +24,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-    
+  tflite: any
+  
   animated_splash_screen: ^1.1.0
 
 
@@ -35,6 +36,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  image_picker: ^0.6.1+4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
