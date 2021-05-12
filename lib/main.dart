@@ -5,11 +5,23 @@ import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'Screens/Slider_screen.dart';
 import './Screens/Camera_Screen.dart';
+import './Screens/connectModel_screen.dart';
 
 void main(){
   runApp(MyApp());
 }
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -21,7 +33,7 @@ class MyApp extends StatelessWidget {
       home: AnimatedSplashScreen(
           splash:Image.asset('assets/images/img8.png',height: 200,width: 300,),
           backgroundColor:  Colors.red[900],
-          nextScreen: Camera_screen(),
+          nextScreen: Connect_Screen(),
         ),
       debugShowCheckedModeBanner:false,
       routes: {

@@ -17,15 +17,15 @@ class _Information_screenState extends State<Information_screen> {
         backgroundColor: Colors.red[900],
         leading: IconButton(icon:Icon( Icons.arrow_back_ios,color: Colors.black,), onPressed:(){ Navigator.of(context).pop();}),
       ),
-        body: Container(
+        body: SingleChildScrollView(
+          child: Container(
           height: MediaQuery.of(context).size.height,
           child: Column(
           //mainAxisAlignment: MainAxisAlignment.,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
           Container(
-           height: 250,
-           width: 325,
+           
            decoration: BoxDecoration(borderRadius: BorderRadius.only(bottomLeft: Radius.circular(200.0),bottomRight: Radius.circular(200.0),), color: Colors.red[900],),
             child : CircleAvatar(
               radius: 10,
@@ -40,8 +40,10 @@ class _Information_screenState extends State<Information_screen> {
             Text ('  Description :',style: TextStyle(fontSize: 23,height: 4.0)),
             Text ('   this meat is fresh and Edible to eat ',style: TextStyle(fontSize: 15),)
           ],
-    ),
+          ),
         ),
+      )
+        
     );
   }
 }
